@@ -12,6 +12,8 @@
 		A405F804227BB1DD00F19CE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A405F802227BB1DD00F19CE2 /* Main.storyboard */; };
 		A405F806227BB1DE00F19CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A405F805227BB1DE00F19CE2 /* Assets.xcassets */; };
 		A405F809227BB1DE00F19CE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A405F807227BB1DE00F19CE2 /* LaunchScreen.storyboard */; };
+		A405F816227BB47800F19CE2 /* RecordWhistleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A405F814227BB47800F19CE2 /* RecordWhistleViewController.swift */; };
+		A405F817227BB47800F19CE2 /* RecordWhistleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A405F815227BB47800F19CE2 /* RecordWhistleViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		A405F805227BB1DE00F19CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A405F808227BB1DE00F19CE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A405F80A227BB1DE00F19CE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A405F814227BB47800F19CE2 /* RecordWhistleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWhistleViewController.swift; sourceTree = "<group>"; };
+		A405F815227BB47800F19CE2 /* RecordWhistleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordWhistleViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 		A405F7FD227BB1DD00F19CE2 /* CloudWhistle */ = {
 			isa = PBXGroup;
 			children = (
+				A405F814227BB47800F19CE2 /* RecordWhistleViewController.swift */,
+				A405F815227BB47800F19CE2 /* RecordWhistleViewController.xib */,
 				A405F7FE227BB1DD00F19CE2 /* AppDelegate.swift */,
 				A405F800227BB1DD00F19CE2 /* ViewController.swift */,
 				A405F802227BB1DD00F19CE2 /* Main.storyboard */,
@@ -124,6 +130,7 @@
 			files = (
 				A405F809227BB1DE00F19CE2 /* LaunchScreen.storyboard in Resources */,
 				A405F806227BB1DE00F19CE2 /* Assets.xcassets in Resources */,
+				A405F817227BB47800F19CE2 /* RecordWhistleViewController.xib in Resources */,
 				A405F804227BB1DD00F19CE2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +144,7 @@
 			files = (
 				A405F801227BB1DD00F19CE2 /* ViewController.swift in Sources */,
 				A405F7FF227BB1DD00F19CE2 /* AppDelegate.swift in Sources */,
+				A405F816227BB47800F19CE2 /* RecordWhistleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

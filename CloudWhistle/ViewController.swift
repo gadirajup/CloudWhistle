@@ -10,11 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // Init
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        setupNavBar()
+    }
+    
+    fileprivate func setupNavBar() {
+        navigationItem.title = "What's the Whistle"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addWhistle))
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Home", style: .plain, target: nil, action: nil)
     }
 
+    
+    // Handlers
+    @objc fileprivate func addWhistle() {
+        print("Blow my whistle baby")
+        
+        let recordWhistleController = RecordWhistleViewController()
+        navigationController?.pushViewController(recordWhistleController, animated: true)
+    }
 
 }
 
