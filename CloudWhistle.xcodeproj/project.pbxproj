@@ -14,6 +14,7 @@
 		A405F809227BB1DE00F19CE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A405F807227BB1DE00F19CE2 /* LaunchScreen.storyboard */; };
 		A405F816227BB47800F19CE2 /* RecordWhistleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A405F814227BB47800F19CE2 /* RecordWhistleViewController.swift */; };
 		A405F817227BB47800F19CE2 /* RecordWhistleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A405F815227BB47800F19CE2 /* RecordWhistleViewController.xib */; };
+		A405F819227BC61000F19CE2 /* SubmitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A405F818227BC61000F19CE2 /* SubmitController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A405F80A227BB1DE00F19CE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A405F814227BB47800F19CE2 /* RecordWhistleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWhistleViewController.swift; sourceTree = "<group>"; };
 		A405F815227BB47800F19CE2 /* RecordWhistleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordWhistleViewController.xib; sourceTree = "<group>"; };
+		A405F818227BC61000F19CE2 /* SubmitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				A405F805227BB1DE00F19CE2 /* Assets.xcassets */,
 				A405F807227BB1DE00F19CE2 /* LaunchScreen.storyboard */,
 				A405F80A227BB1DE00F19CE2 /* Info.plist */,
+				A405F818227BC61000F19CE2 /* SubmitController.swift */,
 			);
 			path = CloudWhistle;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A405F801227BB1DD00F19CE2 /* ViewController.swift in Sources */,
+				A405F819227BC61000F19CE2 /* SubmitController.swift in Sources */,
 				A405F7FF227BB1DD00F19CE2 /* AppDelegate.swift in Sources */,
 				A405F816227BB47800F19CE2 /* RecordWhistleViewController.swift in Sources */,
 			);

@@ -14,6 +14,7 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
     // Properties
     var recordingSession: AVAudioSession!
     var whistleRecorder: AVAudioRecorder!
+    var whistlePlayer: AVAudioPlayer!
     
     
     // UI Elements
@@ -24,6 +25,17 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
         b.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
         b.addTarget(self, action: #selector(recordTapped), for: .touchUpInside)
         return b
+    }()
+    
+    lazy var playButton: UIButton = {
+        let playButton = UIButton()
+        playButton.translatesAutoresizingMaskIntoConstraints = false
+        playButton.setTitle("Tap to Play", for: .normal)
+        playButton.isHidden = true
+        playButton.alpha = 0
+        playButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .title1)
+        playButton.addTarget(self, action: #selector(playTapped), for: .touchUpInside)
+        return playButton
     }()
     
     lazy var failLabel: UILabel = {
@@ -48,6 +60,7 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
     // Init
     override func loadView() {
         view = UIView()
+        view.backgroundColor = .orange
         
         view.addSubview(stackView)
         stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
@@ -82,6 +95,7 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
     
     func loadRecordingUI() {
         stackView.addArrangedSubview(recordButton)
+        stackView.addArrangedSubview(playButton)
     }
     
     func loadFailUI() {
@@ -129,6 +143,12 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
         title = "Record"
 
         if success {
+            
+            UIView.animate(withDuration: 0.35) { [unowned self] in
+                self.playButton.isHidden = false
+                self.playButton.alpha = 1
+            }
+            
             recordButton.setTitle("Tap to Re-record", for: .normal)
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(nextTapped))
         } else {
@@ -141,7 +161,21 @@ class RecordWhistleViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     @objc func nextTapped() {
+        let submitController = SubmitController()
+        navigationController?.pushViewController(submitController, animated: true)
+    }
+    
+    @objc func playTapped() {
+        guard let whistlePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("whistle.m4a") else { return }
         
+        do {
+            whistlePlayer = try AVAudioPlayer(contentsOf: whistlePath)
+            whistlePlayer.play()
+        } catch {
+            let ac = UIAlertController(title: "Error", message: "Error playing Whistle", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            present(ac, animated: true)
+        }
     }
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
