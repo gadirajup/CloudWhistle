@@ -16,6 +16,7 @@
 		A405F817227BB47800F19CE2 /* RecordWhistleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A405F815227BB47800F19CE2 /* RecordWhistleViewController.xib */; };
 		A405F819227BC61000F19CE2 /* SubmitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A405F818227BC61000F19CE2 /* SubmitController.swift */; };
 		A405F81D227BC8B100F19CE2 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A405F81C227BC8B100F19CE2 /* CloudKit.framework */; };
+		A4D273A8227BD0350035863B /* Whistle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D273A7227BD0350035863B /* Whistle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		A405F818227BC61000F19CE2 /* SubmitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitController.swift; sourceTree = "<group>"; };
 		A405F81A227BC8AD00F19CE2 /* CloudWhistle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudWhistle.entitlements; sourceTree = "<group>"; };
 		A405F81C227BC8B100F19CE2 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		A4D273A7227BD0350035863B /* Whistle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Whistle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				A405F807227BB1DE00F19CE2 /* LaunchScreen.storyboard */,
 				A405F80A227BB1DE00F19CE2 /* Info.plist */,
 				A405F818227BC61000F19CE2 /* SubmitController.swift */,
+				A4D273A7227BD0350035863B /* Whistle.swift */,
 			);
 			path = CloudWhistle;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 				A405F819227BC61000F19CE2 /* SubmitController.swift in Sources */,
 				A405F7FF227BB1DD00F19CE2 /* AppDelegate.swift in Sources */,
 				A405F816227BB47800F19CE2 /* RecordWhistleViewController.swift in Sources */,
+				A4D273A8227BD0350035863B /* Whistle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
