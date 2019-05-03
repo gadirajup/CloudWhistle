@@ -15,6 +15,7 @@
 		A405F816227BB47800F19CE2 /* RecordWhistleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A405F814227BB47800F19CE2 /* RecordWhistleViewController.swift */; };
 		A405F817227BB47800F19CE2 /* RecordWhistleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A405F815227BB47800F19CE2 /* RecordWhistleViewController.xib */; };
 		A405F819227BC61000F19CE2 /* SubmitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A405F818227BC61000F19CE2 /* SubmitController.swift */; };
+		A405F81D227BC8B100F19CE2 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A405F81C227BC8B100F19CE2 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		A405F814227BB47800F19CE2 /* RecordWhistleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordWhistleViewController.swift; sourceTree = "<group>"; };
 		A405F815227BB47800F19CE2 /* RecordWhistleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordWhistleViewController.xib; sourceTree = "<group>"; };
 		A405F818227BC61000F19CE2 /* SubmitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitController.swift; sourceTree = "<group>"; };
+		A405F81A227BC8AD00F19CE2 /* CloudWhistle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CloudWhistle.entitlements; sourceTree = "<group>"; };
+		A405F81C227BC8B100F19CE2 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A405F81D227BC8B100F19CE2 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +50,7 @@
 			children = (
 				A405F7FD227BB1DD00F19CE2 /* CloudWhistle */,
 				A405F7FC227BB1DD00F19CE2 /* Products */,
+				A405F81B227BC8B100F19CE2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +65,7 @@
 		A405F7FD227BB1DD00F19CE2 /* CloudWhistle */ = {
 			isa = PBXGroup;
 			children = (
+				A405F81A227BC8AD00F19CE2 /* CloudWhistle.entitlements */,
 				A405F814227BB47800F19CE2 /* RecordWhistleViewController.swift */,
 				A405F815227BB47800F19CE2 /* RecordWhistleViewController.xib */,
 				A405F7FE227BB1DD00F19CE2 /* AppDelegate.swift */,
@@ -71,6 +77,14 @@
 				A405F818227BC61000F19CE2 /* SubmitController.swift */,
 			);
 			path = CloudWhistle;
+			sourceTree = "<group>";
+		};
+		A405F81B227BC8B100F19CE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A405F81C227BC8B100F19CE2 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +119,14 @@
 				TargetAttributes = {
 					A405F7FA227BB1DD00F19CE2 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -294,6 +316,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CloudWhistle/CloudWhistle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4479HNAQMJ;
 				INFOPLIST_FILE = CloudWhistle/Info.plist;
@@ -312,6 +335,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CloudWhistle/CloudWhistle.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4479HNAQMJ;
 				INFOPLIST_FILE = CloudWhistle/Info.plist;

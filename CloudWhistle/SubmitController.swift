@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class SubmitController: UIViewController {
     
@@ -70,6 +71,28 @@ class SubmitController: UIViewController {
     }
     
     fileprivate func doSubmission() {
+        let whistleRecord = CKRecord(recordType: "Whistle")
         
+        whistleRecord["genre"] = genre
+        whistleRecord["comments"] = comments
+        
+        let whistleURLAsset = CKAsset(fileURL: FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("whistle.m4a"))
+        whistleRecord["whistleUrl"] = whistleURLAsset
+        
+        CKContainer.default().publicCloudDatabase.save(whistleRecord) { [unowned self] (record, error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    self.status.text = "Error: \(error.localizedDescription)"
+                    self.spinner.stopAnimating()
+                } else {
+                    self.view.backgroundColor = .green
+                    self.status.text = "Successfully Saved"
+                    self.spinner.stopAnimating()
+                    ViewController.isDirty = true
+                }
+                
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.doneTapped))
+            }
+        }
     }
 }

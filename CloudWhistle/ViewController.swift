@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    static var isDirty = false
 
     // Init
     override func viewDidLoad() {
